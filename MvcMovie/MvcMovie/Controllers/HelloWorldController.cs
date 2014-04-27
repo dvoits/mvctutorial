@@ -10,9 +10,17 @@ namespace MvcMovie.Controllers
     {
         //
         // GET: /HelloWorld/
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hello, World!";
+            return View();
+        }
+
+        public ActionResult Welcome(string name, int ID = 1)
+        {
+            ViewBag.Message = "Hello " + name;
+            ViewBag.ID = ID;
+
+            return View();
         }
 	}
 }
